@@ -14,7 +14,7 @@ public class JokeController {
         this.jokeService = jokeService;
     }
 
-    @GetMapping("/")
+    @GetMapping({"/", ""})
     public ModelAndView getJoke(ModelAndView mv) {
         mv.addObject("joke", jokeService.generateJoke());
         mv.setViewName("index");
